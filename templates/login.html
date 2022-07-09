@@ -1,0 +1,43 @@
+{% extends "layout.html"%} {% block body %}
+
+<form action="/process" method="post">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter email"
+        name="email"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password"
+        name="password"
+        required
+      />
+    </div>
+  </div>
+  {% if failed %}
+  <center>
+    <small class="text-danger">
+      Incorrect email or password
+    </small>
+    </center>
+    {% endif %}
+
+
+  <button type="submit" class="btn btn-primary">Sign in</button>
+
+  
+</form>
+{%endblock%}
